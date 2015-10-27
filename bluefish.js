@@ -1,23 +1,12 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
+  // This code only runs on the client
+  Template.body.helpers({
+    fishes: [
+      { text: "pygmy angelfish",imageurl:"http://www.seascapestudio.net/reference/fishes/centropyge_argi.jpg" },
+      { text: "blue dot grouper",imageurl:"http://www.richard-seaman.com/Underwater/Egypt/Highlights/PeacockGrouper.jpg" },
+      { text: "blue line grouper",imageurl:"http://www.aquariumdomain.com/images/fish_marine/grouper_blueline2.jpg" },
+      {text:  "teira batfish",imageurl:"http://www.aquariumdomain.com/images/fish_marine/tieraBatfish8.jpg"},
+      {text:  "convict blenny",imageurl:"http://www.roslyndakin.com/wp-content/uploads/2011/01/convictadult.jpg"}
+    ]
   });
 }

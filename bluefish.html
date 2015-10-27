@@ -1,14 +1,22 @@
 <head>
-  <title>bluefish</title>
+  <title>bluefish!</title>
 </head>
-
+  
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  <div class="container">
+    <header>
+      <h1>bluefish!</h1>
+    </header>
+  
+    <ul>
+      {{#each fishes}}
+        {{> fish}}
+      {{/each}}
+    </ul>
+  </div>
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  
+<template name="fish">
+  <li><img src={{imageurl}} height="80" width="100"/>{{text}}</li>
+ 
 </template>
