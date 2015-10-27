@@ -7,4 +7,7 @@ if (Meteor.isClient) {
       return Fishes.find({});
     }
   });
+  Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
+  });
 }
